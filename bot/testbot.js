@@ -7,7 +7,7 @@ function Testbot(loginkey) {
   client.login(loginkey);
 
   client.on('ready', async () => {
-    this.guild = client.guilds.first();
+    this.guild = client.guilds.find('name', 'GoodGood');
 
     this.voiceChannel = this.guild.channels.last();
     this.textChannel = this.guild.channels.first();
