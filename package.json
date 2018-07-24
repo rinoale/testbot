@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "discord.js": "^11.2.1",
     "ffmpeg-binaries": "^3.2.2-3",
     "opusscript": "0.0.6",
-    "ytdl-core": "^0.18.4"
+    "request": "^2.87.0",
+    "ytdl-core": "^0.21.1"
   }
 }

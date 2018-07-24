@@ -2,12 +2,13 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const ytdl = require('ytdl-core');
 const fs = require('fs');
+const enchant = require('../lib/enchant.js');
 
 function Testbot(loginkey) {
   client.login(loginkey);
 
   client.on('ready', async () => {
-    this.guild = client.guilds.find('name', 'GoodGood');
+    this.guild = client.guilds.find('name', 'ㄱㅂ');
 
     this.voiceChannel = this.guild.channels.last();
     this.textChannel = this.guild.channels.first();
@@ -34,8 +35,16 @@ function Testbot(loginkey) {
           this.textChannel.send('http://jp.op.gg/summoner/userName=' + command_param[1])
           return;
         case '/PLAY':
-          this.playYoutube(command_param[1]);
+          if (command_param[1]) {
+            this.playYoutube(command_param[1]);
+          }
           return;
+        case '/인챈':
+          if (command_param[1]) {
+            enchant.searchEnchant(command_param[1], (rtn) => {
+              this.textChannel.send(rtn);
+            });
+          }
       }
     }
   })
