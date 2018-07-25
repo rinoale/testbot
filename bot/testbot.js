@@ -10,8 +10,8 @@ function Testbot(loginkey) {
   client.on('ready', async () => {
     this.guild = client.guilds.find('name', 'ㄱㅂ');
 
-    this.voiceChannel = this.guild.channels.last();
-    this.textChannel = this.guild.channels.first();
+    this.voiceChannel = this.guild.channels.find('type', 'voice');
+    this.textChannel = this.guild.channels.find('type', 'text');
 
     try {
       this.connection = await this.voiceChannel.join();
