@@ -85,7 +85,8 @@ Testbot.prototype.playYoutube = function (url) {
   var video = ytdl(url);
   video.pipe(fs.createWriteStream('magol.mp4'));
   video.on('end', () => {
-    this.connection.playFile('magol.mp4');
+    var dispatcher = this.connection.playFile('magol.mp4');
+    dispatcher.setVolume(0.1);
   })
 }
 
