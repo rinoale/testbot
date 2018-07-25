@@ -45,6 +45,7 @@ function Testbot(loginkey) {
               this.textChannel.send(rtn);
             });
           }
+          return;
       }
     }
   })
