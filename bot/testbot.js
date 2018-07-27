@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 const enchant = require('../lib/enchant.js');
+const gameAbout = require('../lib/game_about.js');
 
 var test_data = {
   color: 3447003,
@@ -75,6 +76,11 @@ function Testbot(loginkey) {
               this.textChannel.send(rtn);
             });
           }
+          return;
+        case '/투데':
+          gameAbout.query((rtn) => {
+            this.textChannel.send(rtn);
+          })
           return;
       }
     }
