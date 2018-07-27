@@ -63,7 +63,7 @@ function Testbot(loginkey) {
 
       switch (command_param[0]) {
         case '/OPGG':
-          this.textChannel.send('http://jp.op.gg/summoner/userName=' + command_param[1])
+          message.channel.send('http://jp.op.gg/summoner/userName=' + command_param[1])
           return;
         case '/PLAY':
           if (command_param[1]) {
@@ -73,13 +73,13 @@ function Testbot(loginkey) {
         case '/인챈':
           if (command_param[1]) {
             enchant.searchEnchant(command_param[1], (rtn) => {
-              this.textChannel.send(rtn);
+              message.channel.send(rtn);
             });
           }
           return;
         case '/투데':
           gameAbout.query((rtn) => {
-            this.textChannel.send(rtn);
+            message.channel.send(rtn);
           })
           return;
       }
